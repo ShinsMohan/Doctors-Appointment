@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_patient_prescription" model="ir.actions.report">
+        <field name="name">Patient Prescription Report</field>
+        <field name="model">patient.appointment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">doctors_appointment.report_patient_prescription</field>
+        <field name="report_file">doctors_appointment.report_patient_prescription</field>
+        <field name="binding_model_id" ref="model_patient_appointment" />
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_patient_prescription_xls" model="ir.actions.report">
+        <field name="name">Patient Repor Excel</field>
+        <field name="model">patient.appointment</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">doctors_appointment.report_patient_prescription_xls</field>
+        <field name="report_file">doctors_appointment.report_patient_prescription_xls</field>
+        <field name="binding_model_id" ref="model_patient_appointment" />
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo> 

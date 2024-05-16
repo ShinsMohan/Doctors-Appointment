@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_doctors_appointment"
+        name="Doctors"
+        sequence="10"/>
+
+    <menuitem id="menu_patient_id"
+        name="Patients"
+        parent="menu_doctors_appointment"
+        sequence="10"/>
+    
+        
+</odoo>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="header_footer_layout">
+        <div class="header">
+            <div class="text-center" style="border-bottom: 1px solid black;">
+                <div class="row">
+                    <div class="col-3 mb-4">
+                        <img src="/doctors_appointment/static/images/icon.png" alt="Module Icon"
+                            style="height: 80px; width: 80px;" /><br /> Doctors Appointment </div>
+
+                    <div class="col-9 text-right mt-4" style="text-align: right;">
+                        <p>Patient Care Center<br />Below 46, Tree 12 <br /> Sabaounty Street</p>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="article o_report_layout_standard">
+            <t t-out="0" />
+
+        </div>
+
+        <div class="footer 0_standard_footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <h6>Page <span class="page" /></h6>
+            </div>
+
+        </div>
+    </template>
+
+</odoo>

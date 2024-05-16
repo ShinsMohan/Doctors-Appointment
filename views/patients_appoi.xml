@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_patient_appointment_form" model="ir.ui.view">
+        <field name="name">patient.appointment.form</field>
+        <field name="model">patient.appointment</field>
+        <field name="arch" type="xml">
+
+            <form>
+                <header>
+                    <button class="oe_stat_button" type="object" name="patient_report_sheet"
+                        string="Insert into Spreadsheet"></button>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="patient_id" />
+                        <field name="doctors_id" />
+                        <field name="appointment_date" />
+                        <field name="appointment_type" />
+                    </group>
+
+                    <notebook>
+                        <page name="Observation" string="Observation">
+                            <field name="observation"
+                                placeholder="Enter Patients Observation Here!!" />
+                        </page>
+                        <page name="Medicine" string="Medicine">
+                            <field name="pharmacy_line_ids">
+                                <tree editable="bottom">
+                                    <field name="medicine_id" />
+                                    <field name="quantity" />
+                                    <field name="in_prescription" />
+                                    <button name="addto_prescription" string="Add to Prescription"
+                                        type="object" class="oe_highlight"
+                                        invisible='in_prescription' />
+                                    <button name='action_remove_from_prescription'
+                                        string='Remove from Prescription' type='object'
+                                        class="btn-danger oe_highlight"
+                                        invisible='not in_prescription' />
+                                    <field name="unit_price" />
+                                    <field name="total" />
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="medicine_id" />
+                                        <field name="quantity" />
+                                        <field name="unit_price" />
+                                    </group>
+                                </form>
+                            </field>
+                            <group>
+                                <field name="total_amount" readonly="1" />
+                            </group>
+                        </page>
+                        <page name="Prescription" string="Prescription">
+                            <tree>
+                                <field name="patient_prescription_line_ids">
+                                    <tree>
+                                        <field name="medicine_id" />
+                                        <field name="dosage" />
+                                    </tree>
+                                </field>
+                            </tree>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_patient_appointment_tree" model="ir.ui.view">
+        <field name="name">patient.appointment.tree</field>
+        <field name="model">patient.appointment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="patient_id" />
+                <field name="doctors_id" />
+                <field name="appointment_date" />
+                <field name="appointment_type" />
+                <field name="total_amount" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_patient_appointment" model="ir.actions.act_window">
+        <field name="name">Patient Appointments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">patient.appointment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_patient_appointments"
+        name="Patient Appointments"
+        parent="menu_patient_id"
+        action="action_patient_appointment"
+        sequence="10" />
+</odoo>
