@@ -14,6 +14,7 @@
                 <sheet>
                     <group>
                         <field name="patient_id" />
+                        <!-- <field name="patient_id" /> -->
                         <field name="doctors_id" />
                         <field name="appointment_date" />
                         <field name="appointment_type" />
