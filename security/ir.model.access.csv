@@ -3,6 +3,3 @@ doctors_appointment.access_patient_appointment,Access Patient Appointment,doctor
 doctors_appointment.access_patient_pharmacy_lines,Access Patient Pharmacy Lines,doctors_appointment.model_patient_pharmacy_lines,base.group_user,1,1,1,1
 doctors_appointment.access_patient_prescription_wizard,Access patient Prescription Wizard,doctors_appointment.model_patient_prescription_wizard,base.group_user,1,1,1,1
 doctors_appointment.access_patient_prescription_line,Access Patient Prescription Line,doctors_appointment.model_patient_prescription_line,base.group_user,1,1,1,1
-
-
-

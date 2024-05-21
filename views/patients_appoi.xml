@@ -14,13 +14,12 @@
                 <sheet>
                     <group>
                         <field name="patient_id" />
-                        <!-- <field name="patient_id" /> -->
                         <field name="doctors_id" />
                         <field name="appointment_date" />
                         <field name="appointment_type" />
                     </group>
 
-                    <notebook>
+                    <notebook groups="doctors_appointment.group_doctors_appointment_doctor , doctors_appointment.group_doctors_appointment_administrator">
                         <page name="Observation" string="Observation">
                             <field name="observation"
                                 placeholder="Enter Patients Observation Here!!" />

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="module_doctors_appointment" model="ir.module.category">
+        <field name="name">Doctor Appointment</field>
+        <field name="description">Doctor Appointment Category</field>
+    </record>
+
+    <record id="group_doctors_appointment_administrator" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_doctors_appointment"/>
+    </record>
+
+    <record id="group_doctors_appointment_recption" model="res.groups">
+        <field name="name">Recption</field>
+        <field name="category_id" ref="module_doctors_appointment"/>
+    </record>
+
+    <record id="group_doctors_appointment_doctor" model="res.groups">
+        <field name="name">Doctor</field>
+        <field name="category_id" ref="module_doctors_appointment"/>
+    </record>
+
+    <data noupdate="1">
+        <record id="patient_appointment_rule_doctor" model="ir.rule">
+            <field name="name">Doctor Appointment Rule</field>
+            <field name="model_id" ref="model_patient_appointment"/>
+            <field name="groups" eval="[(4, ref('doctors_appointment.group_doctors_appointment_doctor'))]"/>
+            <field name="domain_force">[('doctors_id.user_id','=',user.id)]</field>
+        </record>
+    </data>
+    
+</odoo>
